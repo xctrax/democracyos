@@ -1,8 +1,24 @@
 import React from 'react'
 
 export default class Home extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state.loaded = false
+  }
+
+  componentDidMount () {
+    this.setState({
+      loaded: true
+    })
+  }
+
   render () {
-    return <p>Hello, {this.props.name}</p>
+    return (
+      <div>
+        <p>Hello, {this.props.name}</p>
+        <p>Loaded: {this.state.loaded}</p>
+      </div>
+    )
   }
 }
 
